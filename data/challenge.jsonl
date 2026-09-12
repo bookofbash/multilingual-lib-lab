@@ -1,0 +1,94 @@
+{"id": "ctrl-en-01", "text": "Please send the agenda before the meeting starts.", "gold": "en", "phenomena": ["control"], "note": "Clean English control. A model that fails here is not ready for the stress cases."}
+{"id": "ctrl-ja-01", "text": "会議が始まる前に議題を送ってください。", "gold": "ja", "phenomena": ["control"], "script": "Jpan", "note": "Clean Japanese control with mixed kanji/kana."}
+{"id": "ctrl-zh-01", "text": "请在会议开始前把议程发过来。", "gold": "zh", "phenomena": ["control"], "script": "Hans", "note": "Clean Simplified Chinese control."}
+{"id": "ctrl-fr-01", "text": "Merci d'envoyer l'ordre du jour avant le début de la réunion.", "gold": "fr", "phenomena": ["control"]}
+{"id": "ctrl-de-01", "text": "Bitte schicken Sie die Tagesordnung vor Beginn der Sitzung.", "gold": "de", "phenomena": ["control"]}
+{"id": "ctrl-es-01", "text": "Por favor envía la agenda antes de que empiece la reunión.", "gold": "es", "phenomena": ["control"]}
+{"id": "ctrl-ar-01", "text": "يرجى إرسال جدول الأعمال قبل بدء الاجتماع.", "gold": "ar", "phenomena": ["control"], "script": "Arab"}
+{"id": "ctrl-ko-01", "text": "회의가 시작되기 전에 안건을 보내 주세요.", "gold": "ko", "phenomena": ["control"], "script": "Kore"}
+{"id": "ctrl-hi-01", "text": "कृपया बैठक शुरू होने से पहले एजेंडा भेज दें।", "gold": "hi", "phenomena": ["control"], "script": "Deva"}
+{"id": "ctrl-sw-01", "text": "Tafadhali tuma ajenda kabla mkutano haujaanza.", "gold": "sw", "phenomena": ["control", "low_resource"], "note": "Swahili is high-resource among African languages but still a coverage gap for 20-class XLM-R checkpoints."}
+{"id": "cs-jaen-01", "text": "明日のmeetingは3pmで大丈夫？", "gold": "ja+en", "phenomena": ["code_switching"], "matrix": "ja", "script": "Jpan", "note": "Japanese grammatical frame with English lexical insertions. Matrix language is Japanese."}
+{"id": "cs-jaen-02", "text": "それ、ちょっとconfirmしてもらえる？", "gold": "ja+en", "phenomena": ["code_switching"], "matrix": "ja", "script": "Jpan", "note": "Workplace Japanese with an English verb used as a verbal noun."}
+{"id": "cs-jaen-03", "text": "バグをfixしたからPR見て。", "gold": "ja+en", "phenomena": ["code_switching", "loanwords"], "matrix": "ja", "script": "Jpan", "note": "Engineering Japanese. PR is an English initialism inside Japanese morphosyntax."}
+{"id": "cs-jaen-04", "text": "I'll send the 資料 after lunch.", "gold": "en+ja", "phenomena": ["code_switching"], "matrix": "en", "script": "Jpan", "note": "English matrix with a Japanese noun inserted. Models often snap to Japanese because of kanji."}
+{"id": "cs-jaen-05", "text": "今日のstandup長すぎた。", "gold": "ja+en", "phenomena": ["code_switching"], "matrix": "ja", "script": "Jpan"}
+{"id": "cs-jaen-06", "text": "Can you 確認 this before we ship?", "gold": "en+ja", "phenomena": ["code_switching"], "matrix": "en", "script": "Jpan"}
+{"id": "cs-jaen-07", "text": "チケットはもうcloseした？", "gold": "ja+en", "phenomena": ["code_switching"], "matrix": "ja", "script": "Jpan"}
+{"id": "cs-jaen-08", "text": "The 締切 is Friday, so please 急いで.", "gold": "en+ja", "phenomena": ["code_switching"], "matrix": "en", "script": "Jpan", "note": "Two Japanese insertions inside an English frame. A single-label model cannot represent this."}
+{"id": "cs-zhen-01", "text": "我刚刚push了新的commit", "gold": "zh+en", "phenomena": ["code_switching"], "matrix": "zh", "script": "Hans", "note": "Mandarin morphosyntax with English software verbs. Classic CN engineering chat."}
+{"id": "cs-zhen-02", "text": "这个feature还没ready", "gold": "zh+en", "phenomena": ["code_switching"], "matrix": "zh", "script": "Hans"}
+{"id": "cs-zhen-03", "text": "Can you 帮忙 look at this?", "gold": "en+zh", "phenomena": ["code_switching"], "matrix": "en", "script": "Hans"}
+{"id": "cs-zhen-04", "text": "会议改到下周了，sorry", "gold": "zh+en", "phenomena": ["code_switching"], "matrix": "zh", "script": "Hans"}
+{"id": "cs-zhen-05", "text": "我先把PR rebase一下", "gold": "zh+en", "phenomena": ["code_switching", "loanwords"], "matrix": "zh", "script": "Hans"}
+{"id": "cs-zhen-06", "text": "Let's 讨论 the rollout plan tonight.", "gold": "en+zh", "phenomena": ["code_switching"], "matrix": "en", "script": "Hans"}
+{"id": "cs-zhen-07", "text": "这个bug在prod才能复现", "gold": "zh+en", "phenomena": ["code_switching"], "matrix": "zh", "script": "Hans"}
+{"id": "cs-zhen-08", "text": "Deadline是周五，please 尽快。", "gold": "zh+en", "phenomena": ["code_switching"], "matrix": "zh", "script": "Hans"}
+{"id": "short-01", "text": "oui", "gold": "fr", "phenomena": ["very_short"], "note": "French yes. Short function words starve n-gram models of context."}
+{"id": "short-02", "text": "ja", "gold": "de|no|da|sv|nl", "phenomena": ["very_short", "homograph"], "note": "Yes in German, Norwegian, Danish, Swedish, and Dutch. Not Japanese; Japanese yes is はい / hai."}
+{"id": "short-03", "text": "no", "gold": "en|es|it", "phenomena": ["very_short", "homograph"], "note": "English no; also Spanish/Italian. Norwegian for no is nei. Language-code collision with Norwegian."}
+{"id": "short-04", "text": "si", "gold": "es|it", "phenomena": ["very_short", "homograph"], "note": "Unaccented sí/sì. Accent stripping makes Spanish and Italian collapse."}
+{"id": "short-05", "text": "da", "gold": "da|hr|sr|ru", "phenomena": ["very_short", "homograph"], "note": "Danish language name; also yes in several Slavic languages; romanized Russian да."}
+{"id": "short-06", "text": "hai", "gold": "ja", "phenomena": ["very_short", "romanization"], "note": "Romanized Japanese yes. Also a Romanian interjection, so closed-set Romance models may steal it."}
+{"id": "short-07", "text": "ok", "gold": "en|und", "phenomena": ["very_short", "loanwords"], "note": "Internationalism. A serious LID system may refuse with und rather than force English."}
+{"id": "short-08", "text": "好", "gold": "zh", "phenomena": ["very_short"], "script": "Hans", "note": "Single-character Chinese. Script is a strong cue; romanized hao is much harder."}
+{"id": "short-09", "text": "はい", "gold": "ja", "phenomena": ["very_short"], "script": "Jpan"}
+{"id": "short-10", "text": "是", "gold": "zh", "phenomena": ["very_short"], "script": "Hans"}
+{"id": "short-11", "text": "نعم", "gold": "ar", "phenomena": ["very_short"], "script": "Arab"}
+{"id": "short-12", "text": "네", "gold": "ko", "phenomena": ["very_short"], "script": "Kore"}
+{"id": "rom-01", "text": "arigatou gozaimasu", "gold": "ja", "phenomena": ["romanization"], "script": "Latn", "note": "Polite Japanese with no kana/kanji. Script-prior models often call this English or Indonesian."}
+{"id": "rom-02", "text": "konnichiwa, ogenki desu ka", "gold": "ja", "phenomena": ["romanization"], "script": "Latn"}
+{"id": "rom-03", "text": "ni hao ma", "gold": "zh", "phenomena": ["romanization"], "script": "Latn", "note": "Pinyin without tones. Looks like short English syllables."}
+{"id": "rom-04", "text": "xie xie ni", "gold": "zh", "phenomena": ["romanization"], "script": "Latn"}
+{"id": "rom-05", "text": "wo hen xihuan zhe ge difang", "gold": "zh", "phenomena": ["romanization"], "script": "Latn"}
+{"id": "rom-06", "text": "kamsahamnida", "gold": "ko", "phenomena": ["romanization"], "script": "Latn", "note": "Romanized Korean. Closed-set models that lack Korean Latin data collapse to English."}
+{"id": "rom-07", "text": "as-salamu alaykum", "gold": "ar", "phenomena": ["romanization"], "script": "Latn", "note": "Arabic greeting in Latin script. Often predicted as Indonesian or English."}
+{"id": "rom-08", "text": "shukran jazeelan", "gold": "ar", "phenomena": ["romanization"], "script": "Latn"}
+{"id": "rom-09", "text": "namaste, aap kaise hain", "gold": "hi", "phenomena": ["romanization"], "script": "Latn", "note": "Romanized Hindi. Easy to confuse with Urdu once both are in Latin script."}
+{"id": "rom-10", "text": "dhanyavaad, main theek hoon", "gold": "hi", "phenomena": ["romanization"], "script": "Latn"}
+{"id": "rel-id-01", "text": "Apakah kamu sudah makan nasi goreng tadi malam?", "gold": "id", "phenomena": ["related_language"], "note": "kamu / apakah are strong Indonesian cues versus Malay anda / adakah."}
+{"id": "rel-ms-01", "text": "Adakah anda sudah makan nasi lemak tadi malam?", "gold": "ms", "phenomena": ["related_language"], "note": "anda / adakah / nasi lemak lean Malay. Character n-grams overlap heavily with Indonesian."}
+{"id": "rel-id-02", "text": "Tolong kirim berkas itu ke saya hari ini.", "gold": "id", "phenomena": ["related_language"]}
+{"id": "rel-ms-02", "text": "Sila hantar fail itu kepada saya hari ini.", "gold": "ms", "phenomena": ["related_language"]}
+{"id": "rel-es-01", "text": "El autobús ya pasó por la esquina.", "gold": "es", "phenomena": ["related_language"]}
+{"id": "rel-pt-01", "text": "O ônibus já passou pela esquina.", "gold": "pt", "phenomena": ["related_language", "dialect_regional"], "region": "BR", "note": "ônibus is Brazilian; European Portuguese prefers autocarro."}
+{"id": "rel-pt-02", "text": "O autocarro já passou pela esquina.", "gold": "pt", "phenomena": ["related_language", "dialect_regional"], "region": "PT"}
+{"id": "rel-no-01", "text": "Jeg liker å gå på ski i helgen.", "gold": "no", "phenomena": ["related_language"], "note": "å + liker is Bokmål. Easy Danish/Swedish confusion."}
+{"id": "rel-da-01", "text": "Jeg kan godt lide at cykle i weekenden.", "gold": "da", "phenomena": ["related_language"], "note": "kan godt lide and at-infinitive are Danish tells."}
+{"id": "rel-sv-01", "text": "Jag tycker om att åka skidor på helgen.", "gold": "sv", "phenomena": ["related_language"]}
+{"id": "rel-hi-01", "text": "मैं कल बाज़ार जाऊँगा।", "gold": "hi", "phenomena": ["related_language"], "script": "Deva", "note": "Hindi in Devanagari. Same spoken language as Urdu; script usually decides."}
+{"id": "rel-ur-01", "text": "میں کل بازار جاؤں گا۔", "gold": "ur", "phenomena": ["related_language"], "script": "Arab", "note": "Urdu in Perso-Arabic. Spoken content is near-identical to the Hindi twin."}
+{"id": "rel-hr-01", "text": "Vlak stiže za petnaest minuta.", "gold": "hr", "phenomena": ["related_language"], "note": "vlak is Croatian; Serbian more often uses voz."}
+{"id": "rel-sr-01", "text": "Воз стиже за петнаест минута.", "gold": "sr", "phenomena": ["related_language"], "script": "Cyrl", "note": "Serbian in Cyrillic. Latin Serbian would be much closer to Croatian."}
+{"id": "rel-cs-01", "text": "Prosím zavřete okno, jestli prší.", "gold": "cs", "phenomena": ["related_language"]}
+{"id": "rel-sk-01", "text": "Prosím zatvorte okno, ak prší.", "gold": "sk", "phenomena": ["related_language"]}
+{"id": "dia-yue-01", "text": "你喺邊度呀？", "gold": "yue", "phenomena": ["dialect_regional"], "script": "Hant", "note": "Written Cantonese. 喺 / 邊度 are not Mandarin. Many LID systems only have a zh bucket."}
+{"id": "dia-yue-02", "text": "食咗飯未？", "gold": "yue", "phenomena": ["dialect_regional"], "script": "Hant"}
+{"id": "dia-yue-03", "text": "唔該幫我睇睇呢個。", "gold": "yue", "phenomena": ["dialect_regional"], "script": "Hant"}
+{"id": "dia-cmn-01", "text": "你在哪里？", "gold": "zh", "phenomena": ["dialect_regional"], "script": "Hans", "note": "Mandarin twin of 你喺邊度呀？"}
+{"id": "dia-cmn-02", "text": "吃饭了吗？", "gold": "zh", "phenomena": ["dialect_regional"], "script": "Hans"}
+{"id": "dia-hant-01", "text": "請在會議開始前把議程寄過來。", "gold": "zh", "phenomena": ["dialect_regional", "script_variant"], "script": "Hant", "region": "TW", "note": "Traditional Chinese. Language is still Mandarin; GlotLID can split zho_Hant vs zho_Hans."}
+{"id": "dia-arz-01", "text": "إنت فين دلوقتي؟", "gold": "arz|ar", "phenomena": ["dialect_regional"], "script": "Arab", "note": "Egyptian Arabic. Accept MSA `ar` because most models collapse dialect to Arabic."}
+{"id": "dia-arz-02", "text": "عايز أتكلم معاك بعد الشغل.", "gold": "arz|ar", "phenomena": ["dialect_regional"], "script": "Arab"}
+{"id": "low-cy-01", "text": "Allwch chi anfon y ffeil cyn canol dydd?", "gold": "cy", "phenomena": ["low_resource"], "note": "Welsh. Latin script plus English-looking tokens (ffeil, canol) fool high-resource priors."}
+{"id": "low-cy-02", "text": "Mae'r trên yn cyrraedd ymhen pymtheg munud.", "gold": "cy", "phenomena": ["low_resource"]}
+{"id": "low-ga-01", "text": "An féidir leat an comhad a sheoladh roimh mheán lae?", "gold": "ga", "phenomena": ["low_resource"], "note": "Irish. Initial mutations (sheoladh, mheán) are the linguistic tell."}
+{"id": "low-ga-02", "text": "Tá an aimsir níos fearr ná inné.", "gold": "ga", "phenomena": ["low_resource"]}
+{"id": "low-yo-01", "text": "Ṣé o lè fi fáìlì náà ránṣẹ́ ṣáájú ọ̀sán?", "gold": "yo", "phenomena": ["low_resource"], "note": "Yoruba with tone marks. Stripping diacritics collapses it toward English/Portuguese."}
+{"id": "low-yo-02", "text": "Mo fi kọ́kọ́rọ́ sí orí tábìlì ìdáná.", "gold": "yo", "phenomena": ["low_resource"]}
+{"id": "low-eu-01", "text": "Mesedez, bidali fitxategia eguerdia baino lehen.", "gold": "eu", "phenomena": ["low_resource"], "note": "Basque. Isolate; no family match should rescue a wrong Romance prediction."}
+{"id": "low-eu-02", "text": "Eguraldia atzo baino hobea da.", "gold": "eu", "phenomena": ["low_resource"]}
+{"id": "low-haw-01", "text": "E ʻoluʻolu e hoʻouna i ka faila ma mua o ke awakea.", "gold": "haw", "phenomena": ["low_resource"], "note": "Hawaiian. ʻokina and vowel length are distinctive; ASCII folding destroys them."}
+{"id": "low-haw-02", "text": "Ua ʻoi aku ka maikaʻi o ke anilā i kēia lā.", "gold": "haw", "phenomena": ["low_resource"]}
+{"id": "low-am-01", "text": "እባክህ ፋይሉን ከቀትር በፊት ላክ።", "gold": "am", "phenomena": ["low_resource"], "script": "Ethi", "note": "Amharic in Fidel. Script should help; coverage is the real failure mode."}
+{"id": "low-am-02", "text": "የዛሬው የአየር ሁኔታ ከትናንት ይሻላል።", "gold": "am", "phenomena": ["low_resource"], "script": "Ethi"}
+{"id": "mix-01", "text": "Tokyo 東京 is beautiful in April.", "gold": "en+ja", "phenomena": ["mixed_script", "named_entity"], "matrix": "en", "note": "English sentence with a Japanese named-entity gloss. Kanji often hijacks the prediction."}
+{"id": "mix-02", "text": "We landed in 北京 last night.", "gold": "en+zh", "phenomena": ["mixed_script", "named_entity"], "matrix": "en"}
+{"id": "mix-03", "text": "ソニーが新しいWalkmanを発表した。", "gold": "ja+en", "phenomena": ["mixed_script", "named_entity"], "matrix": "ja", "script": "Jpan"}
+{"id": "mix-04", "text": "これはemoji😂テストです。", "gold": "ja", "phenomena": ["mixed_script"], "script": "Jpan", "note": "Emoji should be ignored; the linguistic content is Japanese."}
+{"id": "mix-05", "text": "Café résumé naïve — still English prose.", "gold": "en", "phenomena": ["mixed_script"], "note": "Diacritics from loanwords. Models sometimes jump to French."}
+{"id": "loan-01", "text": "I already RSVP'd to the soirée.", "gold": "en", "phenomena": ["loanwords"], "note": "English with French loans. Lexical borrowing is not code-switching."}
+{"id": "loan-02", "text": "彼はアルバイトを探している。", "gold": "ja", "phenomena": ["loanwords"], "script": "Jpan", "note": "アルバイト is a German loan via Japanese phonology. Still Japanese."}
+{"id": "loan-03", "text": "我们周末去Karaoke吧。", "gold": "zh+en", "phenomena": ["loanwords", "code_switching"], "matrix": "zh", "script": "Hans", "note": "Karaoke is an English/Japanese internationalism inside Mandarin."}
+{"id": "ne-01", "text": "Apple released iOS in Cupertino last year.", "gold": "en", "phenomena": ["named_entity"], "note": "Proper nouns should not dominate language ID when the frame is English."}
+{"id": "ne-02", "text": "任天堂は京都に本社がある。", "gold": "ja", "phenomena": ["named_entity"], "script": "Jpan"}

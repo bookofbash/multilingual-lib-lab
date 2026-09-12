@@ -1,0 +1,3 @@
+"""Compact language-identification lab."""
+
+__version__ = "0.1.0"

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lidlab"
+version = "0.1.0"
+description = "A compact language-identification lab for multilingual, code-switched, and low-resource stress cases."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Bashir Harrell" }]
+keywords = ["language-identification", "multilingual", "nlp", "evaluation"]
+dependencies = [
+  "numpy>=1.26",
+  "scikit-learn>=1.4",
+]
+
+[project.optional-dependencies]
+fasttext = [
+  "fasttext-numpy2-wheel>=0.9.2",
+  "huggingface-hub>=0.23",
+]
+neural = [
+  "torch>=2.2",
+  "transformers>=4.40",
+  "sentence-transformers>=3.0",
+]
+all = [
+  "lidlab[fasttext,neural]",
+]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+lidlab = "lidlab.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/bookofbash/multilingual-lib-lab"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lidlab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

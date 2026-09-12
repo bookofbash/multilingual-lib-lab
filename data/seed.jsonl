@@ -1,0 +1,160 @@
+{"id": "seed-en-01", "text": "The weather is nicer than yesterday.", "gold": "en", "split": "seed"}
+{"id": "seed-en-02", "text": "Could you send the file before noon?", "gold": "en", "split": "seed"}
+{"id": "seed-en-03", "text": "I left the keys on the kitchen table.", "gold": "en", "split": "seed"}
+{"id": "seed-en-04", "text": "We should meet near the station.", "gold": "en", "split": "seed"}
+{"id": "seed-en-05", "text": "This book is surprisingly hard to finish.", "gold": "en", "split": "seed"}
+{"id": "seed-en-06", "text": "She asked a question nobody could answer.", "gold": "en", "split": "seed"}
+{"id": "seed-en-07", "text": "The train arrives in fifteen minutes.", "gold": "en", "split": "seed"}
+{"id": "seed-en-08", "text": "Please close the window if it rains.", "gold": "en", "split": "seed"}
+{"id": "seed-en-09", "text": "He drinks coffee every morning.", "gold": "en", "split": "seed"}
+{"id": "seed-en-10", "text": "They opened a small shop last spring.", "gold": "en", "split": "seed"}
+{"id": "seed-ja-01", "text": "昨日より天気がいいです。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-02", "text": "正午までにファイルを送ってください。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-03", "text": "鍵は台所のテーブルの上に置きました。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-04", "text": "駅の近くで会いましょう。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-05", "text": "この本は思ったより難しい。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-06", "text": "誰も答えられない質問を彼女がした。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-07", "text": "電車は十五分後に着きます。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-08", "text": "雨が降ったら窓を閉めてください。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-09", "text": "彼は毎朝コーヒーを飲みます。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-ja-10", "text": "彼らは去年の春に小さな店を開きました。", "gold": "ja", "split": "seed", "script": "Jpan"}
+{"id": "seed-zh-01", "text": "今天天气比昨天好。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-02", "text": "请在中午之前把文件发过来。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-03", "text": "我把钥匙放在厨房桌子上了。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-04", "text": "我们在车站附近见面吧。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-05", "text": "这本书比想象中难。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-06", "text": "她问了一个没人能回答的问题。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-07", "text": "火车十五分钟后到。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-08", "text": "如果下雨就把窗户关上。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-09", "text": "他每天早上都喝咖啡。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-zh-10", "text": "他们去年春天开了一家小店。", "gold": "zh", "split": "seed", "script": "Hans"}
+{"id": "seed-fr-01", "text": "Le temps est plus beau qu'hier.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-02", "text": "Pouvez-vous envoyer le fichier avant midi ?", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-03", "text": "J'ai laissé les clés sur la table de la cuisine.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-04", "text": "Nous devrions nous retrouver près de la gare.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-05", "text": "Ce livre est étonnamment difficile à terminer.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-06", "text": "Elle a posé une question à laquelle personne ne pouvait répondre.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-07", "text": "Le train arrive dans quinze minutes.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-08", "text": "Fermez la fenêtre s'il pleut.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-09", "text": "Il boit du café tous les matins.", "gold": "fr", "split": "seed"}
+{"id": "seed-fr-10", "text": "Ils ont ouvert une petite boutique au printemps dernier.", "gold": "fr", "split": "seed"}
+{"id": "seed-de-01", "text": "Das Wetter ist schöner als gestern.", "gold": "de", "split": "seed"}
+{"id": "seed-de-02", "text": "Könnten Sie die Datei vor Mittag schicken?", "gold": "de", "split": "seed"}
+{"id": "seed-de-03", "text": "Ich habe die Schlüssel auf dem Küchentisch gelassen.", "gold": "de", "split": "seed"}
+{"id": "seed-de-04", "text": "Wir sollten uns in der Nähe des Bahnhofs treffen.", "gold": "de", "split": "seed"}
+{"id": "seed-de-05", "text": "Dieses Buch ist überraschend schwer zu beenden.", "gold": "de", "split": "seed"}
+{"id": "seed-de-06", "text": "Sie stellte eine Frage, die niemand beantworten konnte.", "gold": "de", "split": "seed"}
+{"id": "seed-de-07", "text": "Der Zug kommt in fünfzehn Minuten an.", "gold": "de", "split": "seed"}
+{"id": "seed-de-08", "text": "Bitte das Fenster schließen, wenn es regnet.", "gold": "de", "split": "seed"}
+{"id": "seed-de-09", "text": "Er trinkt jeden Morgen Kaffee.", "gold": "de", "split": "seed"}
+{"id": "seed-de-10", "text": "Sie haben letzten Frühling einen kleinen Laden eröffnet.", "gold": "de", "split": "seed"}
+{"id": "seed-es-01", "text": "El tiempo está más agradable que ayer.", "gold": "es", "split": "seed"}
+{"id": "seed-es-02", "text": "¿Puedes enviar el archivo antes del mediodía?", "gold": "es", "split": "seed"}
+{"id": "seed-es-03", "text": "Dejé las llaves sobre la mesa de la cocina.", "gold": "es", "split": "seed"}
+{"id": "seed-es-04", "text": "Deberíamos quedar cerca de la estación.", "gold": "es", "split": "seed"}
+{"id": "seed-es-05", "text": "Este libro es sorprendentemente difícil de terminar.", "gold": "es", "split": "seed"}
+{"id": "seed-es-06", "text": "Ella hizo una pregunta que nadie pudo responder.", "gold": "es", "split": "seed"}
+{"id": "seed-es-07", "text": "El tren llega en quince minutos.", "gold": "es", "split": "seed"}
+{"id": "seed-es-08", "text": "Cierra la ventana si llueve.", "gold": "es", "split": "seed"}
+{"id": "seed-es-09", "text": "Él bebe café todas las mañanas.", "gold": "es", "split": "seed"}
+{"id": "seed-es-10", "text": "Abrieron una tienda pequeña la primavera pasada.", "gold": "es", "split": "seed"}
+{"id": "seed-pt-01", "text": "O tempo está melhor do que ontem.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-02", "text": "Você pode enviar o arquivo antes do meio-dia?", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-03", "text": "Deixei as chaves sobre a mesa da cozinha.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-04", "text": "Devíamos nos encontrar perto da estação.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-05", "text": "Este livro é surpreendentemente difícil de terminar.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-06", "text": "Ela fez uma pergunta que ninguém conseguiu responder.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-07", "text": "O trem chega em quinze minutos.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-08", "text": "Feche a janela se chover.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-09", "text": "Ele bebe café todas as manhãs.", "gold": "pt", "split": "seed"}
+{"id": "seed-pt-10", "text": "Eles abriram uma loja pequena na primavera passada.", "gold": "pt", "split": "seed"}
+{"id": "seed-id-01", "text": "Cuacanya lebih cerah daripada kemarin.", "gold": "id", "split": "seed"}
+{"id": "seed-id-02", "text": "Bisakah kamu mengirim berkas sebelum siang?", "gold": "id", "split": "seed"}
+{"id": "seed-id-03", "text": "Aku meninggalkan kunci di meja dapur.", "gold": "id", "split": "seed"}
+{"id": "seed-id-04", "text": "Kita sebaiknya bertemu dekat stasiun.", "gold": "id", "split": "seed"}
+{"id": "seed-id-05", "text": "Buku ini ternyata sulit sekali diselesaikan.", "gold": "id", "split": "seed"}
+{"id": "seed-id-06", "text": "Dia mengajukan pertanyaan yang tidak ada yang bisa jawab.", "gold": "id", "split": "seed"}
+{"id": "seed-id-07", "text": "Kereta tiba dalam lima belas menit.", "gold": "id", "split": "seed"}
+{"id": "seed-id-08", "text": "Tolong tutup jendelanya jika hujan.", "gold": "id", "split": "seed"}
+{"id": "seed-id-09", "text": "Dia minum kopi setiap pagi.", "gold": "id", "split": "seed"}
+{"id": "seed-id-10", "text": "Mereka membuka toko kecil musim semi lalu.", "gold": "id", "split": "seed"}
+{"id": "seed-ms-01", "text": "Cuacanya lebih cerah berbanding semalam.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-02", "text": "Bolehkah anda menghantar fail sebelum tengah hari?", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-03", "text": "Saya meninggalkan kunci di atas meja dapur.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-04", "text": "Kita sepatutnya berjumpa berhampiran stesen.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-05", "text": "Buku ini lebih sukar diselesaikan daripada jangkaan.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-06", "text": "Dia mengemukakan soalan yang tiada siapa dapat jawab.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-07", "text": "Kereta api tiba dalam masa lima belas minit.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-08", "text": "Sila tutup tingkap jika hujan.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-09", "text": "Dia minum kopi setiap pagi.", "gold": "ms", "split": "seed"}
+{"id": "seed-ms-10", "text": "Mereka membuka sebuah kedai kecil musim bunga lalu.", "gold": "ms", "split": "seed"}
+{"id": "seed-no-01", "text": "Været er finere enn i går.", "gold": "no", "split": "seed"}
+{"id": "seed-no-02", "text": "Kan du sende filen før klokken tolv?", "gold": "no", "split": "seed"}
+{"id": "seed-no-03", "text": "Jeg lot nøklene ligge på kjøkkenbordet.", "gold": "no", "split": "seed"}
+{"id": "seed-no-04", "text": "Vi burde møtes nær stasjonen.", "gold": "no", "split": "seed"}
+{"id": "seed-no-05", "text": "Denne boken er overraskende vanskelig å bli ferdig med.", "gold": "no", "split": "seed"}
+{"id": "seed-no-06", "text": "Hun stilte et spørsmål ingen kunne svare på.", "gold": "no", "split": "seed"}
+{"id": "seed-no-07", "text": "Toget kommer om femten minutter.", "gold": "no", "split": "seed"}
+{"id": "seed-no-08", "text": "Lukk vinduet hvis det regner.", "gold": "no", "split": "seed"}
+{"id": "seed-no-09", "text": "Han drikker kaffe hver morgen.", "gold": "no", "split": "seed"}
+{"id": "seed-no-10", "text": "De åpnet en liten butikk i fjor vår.", "gold": "no", "split": "seed"}
+{"id": "seed-da-01", "text": "Vejret er pænere end i går.", "gold": "da", "split": "seed"}
+{"id": "seed-da-02", "text": "Kan du sende filen inden middag?", "gold": "da", "split": "seed"}
+{"id": "seed-da-03", "text": "Jeg efterlod nøglerne på køkkenbordet.", "gold": "da", "split": "seed"}
+{"id": "seed-da-04", "text": "Vi burde mødes tæt på stationen.", "gold": "da", "split": "seed"}
+{"id": "seed-da-05", "text": "Den her bog er overraskende svær at blive færdig med.", "gold": "da", "split": "seed"}
+{"id": "seed-da-06", "text": "Hun stillede et spørgsmål, som ingen kunne svare på.", "gold": "da", "split": "seed"}
+{"id": "seed-da-07", "text": "Toget kommer om femten minutter.", "gold": "da", "split": "seed"}
+{"id": "seed-da-08", "text": "Luk vinduet, hvis det regner.", "gold": "da", "split": "seed"}
+{"id": "seed-da-09", "text": "Han drikker kaffe hver morgen.", "gold": "da", "split": "seed"}
+{"id": "seed-da-10", "text": "De åbnede en lille butik sidste forår.", "gold": "da", "split": "seed"}
+{"id": "seed-sv-01", "text": "Vädret är finare än igår.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-02", "text": "Kan du skicka filen före klockan tolv?", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-03", "text": "Jag lämnade nycklarna på köksbordet.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-04", "text": "Vi borde ses nära stationen.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-05", "text": "Den här boken är förvånansvärt svår att bli klar med.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-06", "text": "Hon ställde en fråga som ingen kunde svara på.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-07", "text": "Tåget kommer om femton minuter.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-08", "text": "Stäng fönstret om det regnar.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-09", "text": "Han dricker kaffe varje morgon.", "gold": "sv", "split": "seed"}
+{"id": "seed-sv-10", "text": "De öppnade en liten butik förra våren.", "gold": "sv", "split": "seed"}
+{"id": "seed-ar-01", "text": "الطقس اليوم أفضل من الأمس.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-02", "text": "من فضلك أرسل الملف قبل الظهر.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-03", "text": "تركت المفاتيح على طاولة المطبخ.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-04", "text": "ينبغي أن نلتقي قرب المحطة.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-05", "text": "هذا الكتاب أصعب مما توقعت.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-06", "text": "سألت سؤالاً لم يستطع أحد الإجابة عليه.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-07", "text": "يصل القطار خلال خمس عشرة دقيقة.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-08", "text": "أغلق النافذة إذا أمطرت.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-09", "text": "يشرب القهوة كل صباح.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ar-10", "text": "فتحوا متجراً صغيراً في الربيع الماضي.", "gold": "ar", "split": "seed", "script": "Arab"}
+{"id": "seed-ko-01", "text": "오늘 날씨가 어제보다 좋아요.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-02", "text": "정오 전에 파일을 보내 주세요.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-03", "text": "열쇠를 부엌 테이블 위에 두었어요.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-04", "text": "역 근처에서 만나요.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-05", "text": "이 책은 생각보다 어려워요.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-06", "text": "그녀는 아무도 답할 수 없는 질문을 했어요.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-07", "text": "기차는 십오 분 후에 도착합니다.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-08", "text": "비가 오면 창문을 닫아 주세요.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-09", "text": "그는 매일 아침 커피를 마십니다.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-ko-10", "text": "그들은 지난봄에 작은 가게를 열었습니다.", "gold": "ko", "split": "seed", "script": "Kore"}
+{"id": "seed-hi-01", "text": "आज मौसम कल से बेहतर है।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-02", "text": "कृपया दोपहर से पहले फ़ाइल भेज दें।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-03", "text": "मैंने चाबी रसोई की मेज़ पर छोड़ दी।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-04", "text": "हम स्टेशन के पास मिलें।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-05", "text": "यह किताब सोचे से ज़्यादा कठिन है।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-06", "text": "उसने एक ऐसा सवाल पूछा जिसका जवाब कोई नहीं दे पाया।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-07", "text": "ट्रेन पंद्रह मिनट में आएगी।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-08", "text": "बारिश हो तो खिड़की बंद कर देना।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-09", "text": "वह हर सुबह कॉफ़ी पीता है।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-hi-10", "text": "उन्होंने पिछले वसंत में एक छोटी दुकान खोली।", "gold": "hi", "split": "seed", "script": "Deva"}
+{"id": "seed-sw-01", "text": "Hali ya hewa leo ni nzuri kuliko jana.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-02", "text": "Tafadhali tuma faili kabla ya adhuhuri.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-03", "text": "Nilichia funguo kwenye meza ya jikoni.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-04", "text": "Tukutane karibu na kituo cha treni.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-05", "text": "Kitabu hiki ni kigumu kuliko nilivyodhani.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-06", "text": "Aliuliza swali ambalo hakuna aliyeweza kujibu.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-07", "text": "Treni itafika baada ya dakika kumi na tano.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-08", "text": "Funga dirisha ikiwa mvua itanyesha.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-09", "text": "Anakunywa kahawa kila asubuhi.", "gold": "sw", "split": "seed"}
+{"id": "seed-sw-10", "text": "Walifungua duka dogo msimu wa kuchipua uliopita.", "gold": "sw", "split": "seed"}
