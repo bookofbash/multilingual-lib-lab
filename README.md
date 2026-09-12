@@ -129,6 +129,7 @@ data/challenge.jsonl   # held-out linguistic stress set
 data/seed.jsonl        # train-only data for closed-set models
 docs/PHENOMENA.md      # why each bucket exists
 docs/DEVELOPING.md     # map of the machinery
+docs/PROJECT_LOG.md    # session history; where work last stopped
 docs/how-to/           # run models / add an item / add a model
 src/lidlab/            # adapters, metrics, CLI
 reports/               # generated runs

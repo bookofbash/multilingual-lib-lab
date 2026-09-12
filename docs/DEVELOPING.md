@@ -9,6 +9,7 @@ thesis: interesting-errors-are-linguistic
 This is the document to sit with if you want to operate the lab without an
 LLM. The README is the public claim. This file is the map of the machinery.
 [docs/PHENOMENA.md](PHENOMENA.md) is why the items exist.
+[docs/PROJECT_LOG.md](PROJECT_LOG.md) is where a session stopped.
 
 How-tos for the three jobs you will actually do:
 
