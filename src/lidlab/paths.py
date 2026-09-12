@@ -31,6 +31,13 @@ def cache_dir() -> Path:
     return path
 
 
+def xlmrft_dir() -> Path:
+    env = os.environ.get("LIDLAB_XLMRFT")
+    if env:
+        return Path(env)
+    return cache_dir() / "xlmrft"
+
+
 def reports_dir() -> Path:
     path = repo_root() / "reports"
     path.mkdir(parents=True, exist_ok=True)

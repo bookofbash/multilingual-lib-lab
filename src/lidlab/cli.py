@@ -25,6 +25,19 @@ def main(argv: list[str] | None = None) -> int:
     check = sub.add_parser("check-data", help="Validate seed and challenge JSONL")
     check.add_argument("--quiet", action="store_true")
 
+    train_parser = sub.add_parser(
+        "train-xlmr",
+        help="Fine-tune XLM-R on WiLI-2018 with the challenge set held out",
+    )
+    train_parser.add_argument("--max-per-lang", type=int, default=400)
+    train_parser.add_argument("--epochs", type=int, default=2)
+    train_parser.add_argument("--batch-size", type=int, default=16)
+    train_parser.add_argument("--seed", type=int, default=0)
+    train_parser.add_argument("--limit", type=int, default=None, help="Cap rows after filters (smoke run)")
+    train_parser.add_argument("--output", default=None, help="Checkpoint directory (default: cache/xlmrft)")
+    train_parser.add_argument("--base", default="xlm-roberta-base")
+    train_parser.add_argument("--dataset", default="MartinThoma/wili_2018")
+
     args = parser.parse_args(argv)
     if args.command == "eval":
         names = [part.strip() for part in args.models.split(",") if part.strip()]
@@ -49,6 +62,29 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         if not args.quiet:
             print(f"ok: {len(challenge)} challenge, {len(seed)} seed")
+        return 0
+    if args.command == "train-xlmr":
+        from pathlib import Path
+
+        from lidlab.train.xlmr import run_train
+
+        result = run_train(
+            dataset_id=args.dataset,
+            base_model=args.base,
+            max_per_lang=args.max_per_lang,
+            epochs=args.epochs,
+            batch_size=args.batch_size,
+            seed=args.seed,
+            limit=args.limit,
+            output_dir=Path(args.output) if args.output else None,
+        )
+        print(f"wrote {result.output_dir}")
+        print(
+            f"xlmrft: n={result.n} langs={len(result.languages)} "
+            f"dropped_heldout={result.dropped_heldout}"
+        )
+        if result.missing_targets:
+            print("missing WiLI targets: " + ",".join(result.missing_targets))
         return 0
     raise AssertionError(args.command)
 

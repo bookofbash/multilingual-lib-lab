@@ -5,7 +5,7 @@ from collections.abc import Sequence
 from lidlab.schema import Example, ModelCard
 from lidlab.models.base import LidModel
 
-MODEL_KINDS = ("tfidf", "fasttext", "glotlid", "xlmr", "embed")
+MODEL_KINDS = ("tfidf", "fasttext", "glotlid", "xlmr", "xlmrft", "embed")
 
 
 def build_model(name: str, seed: Sequence[Example] | None = None) -> LidModel:
@@ -26,6 +26,10 @@ def build_model(name: str, seed: Sequence[Example] | None = None) -> LidModel:
         from lidlab.models.xlmr import XlmrLid
 
         return XlmrLid.load()
+    if key == "xlmrft":
+        from lidlab.models.xlmr_ft import XlmrFtLid
+
+        return XlmrFtLid.load()
     if key == "embed":
         from lidlab.models.embed import EmbedLid
 

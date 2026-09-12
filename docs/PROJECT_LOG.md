@@ -5,6 +5,41 @@ This file is where a night of work stopped.
 
 ---
 
+## 2026-09-12 — XLM-R fine-tune scored on the challenge set
+
+**Goal:** Train `xlmrft` on WiLI (challenge held out) and put it next to papluca `xlmr`.
+
+**Done:**
+- Colab T4: smoke `--limit 32`, then `--max-per-lang 400 --epochs 2`. Checkpoint `/root/.cache/lidlab/xlmrft`.
+- Eval `reports/20260912T221801Z/`: `xlmr` 0.532 exact / 0.769 covered (65/94); `xlmrft` 0.777 exact / 0.793 covered (92/94). Codeswitch hit 1.0 on both.
+- Phenomenon: `related_language` 0.312 → 0.938, `low_resource` 0.077 → 0.846, control 1.0. `very_short` stuck at 0.333. Romanization 0.182 → 0.091. Confusions dump to `yo`.
+- Hawaiian uncovered (not in WiLI). Held-out drops: 0. README phenomenon table updated.
+
+**Open / next:**
+1. Commit trainer + scoreboard; push.
+2. Codeswitch head, or top-2 against `+` labels.
+3. Optional: same adapters on CommonLID.
+
+---
+
+## 2026-09-12 — Start the XLM-R fine-tune
+
+**Goal:** Make the Colab GPU job real in this repo: public LID data, challenge set held out, new `xlmrft` adapter.
+
+**Done:**
+- `lidlab train-xlmr` fine-tunes `xlm-roberta-base` on WiLI-2018 (`MartinThoma/wili_2018`), filtered to challenge-relevant languages, capped per language.
+- Held-out filter drops any train row whose text matches a challenge item. `--dataset` that names `challenge.jsonl` is refused.
+- Adapter `xlmrft` loads `~/.cache/lidlab/xlmrft` (or `LIDLAB_XLMRFT`). `xlmr` stays the 20-class papluca baseline.
+- Label mapping: `zh-yue` → `yue` (not `zh`). Recipe: [how-to/finetune-xlmr.md](how-to/finetune-xlmr.md).
+- Tests cover the filter and the mapping. The trainer itself was not run (no GPU on the N100).
+
+**Open / next:**
+1. On Colab GPU: `pip install -e '.[train,dev]'` then `python -m lidlab.cli train-xlmr --limit 32 --epochs 1`, then the full `--max-per-lang 400 --epochs 2`. Eval `xlmr,xlmrft`. Copy the row into the README.
+2. Codeswitch head, or top-2 scoring against `+` labels.
+3. Optional: same adapters on CommonLID.
+
+---
+
 ## 2026-09-12 — GlotLID on the challenge set
 
 **Goal:** Run `glotlid` alone on the N100 and put the coverage leader on the scoreboard.
@@ -26,7 +61,7 @@ This file is where a night of work stopped.
 GlotLID names every item. The interesting miss is not coverage: `very_short` 0.417 vs fastText 0.667 (`no` → Bribri, `ok` → Luo). One codeswitch miss: `cs-jaen-05` `今日のstandup長すぎた。` → `zh`. Romanization 0.091. `low_resource` and `related_language` are 1.000.
 
 **Open / next:**
-1. Fine-tune XLM-R on a larger public LID set; keep this challenge set held out (Colab GPU).
+1. Run `lidlab train-xlmr` on Colab (see the 2026-09-12 fine-tune entry).
 2. Codeswitch head, or top-2 scoring against `+` labels.
 3. Optional: same adapters on CommonLID.
 

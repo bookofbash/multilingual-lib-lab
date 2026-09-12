@@ -8,6 +8,8 @@ def test_fasttext_and_glotlid_labels_collapse():
     assert normalize_language("cmn_Hans") == "zh"
     assert normalize_language("yue_Hant") == "yue"
     assert normalize_language("yor_Latn") == "yo"
+    assert normalize_language("zh-yue") == "yue"
+    assert normalize_language("zh-cn") == "zh"
 
 
 def test_prediction_keeps_script():

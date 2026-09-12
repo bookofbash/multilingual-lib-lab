@@ -26,8 +26,13 @@ neural = [
   "transformers>=4.40",
   "sentence-transformers>=3.0",
 ]
+train = [
+  "lidlab[neural]",
+  "datasets>=2.19",
+  "accelerate>=0.30",
+]
 all = [
-  "lidlab[fasttext,neural]",
+  "lidlab[fasttext,neural,train]",
 ]
 dev = [
   "pytest>=8.0",

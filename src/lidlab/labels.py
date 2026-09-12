@@ -21,6 +21,7 @@ ISO3_TO_ISO1 = {
     "bul": "bg",
     "cat": "ca",
     "ces": "cs",
+    "chi": "zh",
     "cmn": "zh",
     "cym": "cy",
     "dan": "da",
@@ -51,6 +52,7 @@ ISO3_TO_ISO1 = {
     "lit": "lt",
     "lvs": "lv",
     "mar": "mr",
+    "may": "ms",
     "mkd": "mk",
     "msa": "ms",
     "nld": "nl",
@@ -167,16 +169,17 @@ def normalize_language(label: str) -> str:
     if token.startswith("__label__"):
         token = token[len("__label__") :]
     token = token.replace(" ", "")
-    script = None
     if "_" in token:
         lang_part, script_part = token.split("_", 1)
         token = lang_part
-        script = SCRIPT_ALIASES.get(script_part.lower(), script_part)
-    if "-" in token:
-        token = token.split("-", 1)[0]
     lower = token.lower()
     if lower in {"zh-cn", "zh-tw", "zh-hk"}:
         return "zh"
+    if lower in {"zh-yue"}:
+        return "yue"
+    if "-" in token:
+        token = token.split("-", 1)[0]
+        lower = token.lower()
     if lower in KEEP_ISO3:
         return lower
     if lower in ISO3_TO_ISO1:

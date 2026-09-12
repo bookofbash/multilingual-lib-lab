@@ -12,5 +12,6 @@ is the map of the machinery. [../PHENOMENA.md](../PHENOMENA.md) is why the items
 | Recipe | Status | Audience |
 | --- | --- | --- |
 | [Run heavier models](run-heavier-models.md) | draft | public |
+| [Fine-tune XLM-R](finetune-xlmr.md) | draft | public |
 | [Add a challenge item](add-a-challenge-item.md) | draft | public |
 | [Add a model](add-a-model.md) | draft | public |

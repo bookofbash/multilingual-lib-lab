@@ -90,8 +90,10 @@ baseline. Do not round away the coverage split.
 
 ## Colab
 
-Use Colab only if CPU `xlmr` is too slow to iterate, or if you want to try a
-GPU fine-tune later. The challenge set and scoring live in this repo. A Colab
-notebook that does not call `lidlab eval` (or the same `score_run` path) is a
-different experiment. Keep the JSONL here; do not paste gold labels into a
-notebook cell.
+Use Colab for the XLM-R **fine-tune**, not for scoring `fasttext` or
+`xlmr`. Those two already run on the laptop. The challenge set and
+scoring live in this repo. A notebook that does not call `lidlab eval`
+(or the same `score_run` path) is a different experiment. Keep the JSONL
+here; do not paste gold labels into a notebook cell.
+
+The fine-tune recipe is [finetune-xlmr.md](finetune-xlmr.md).

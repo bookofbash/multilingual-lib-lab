@@ -11,9 +11,10 @@ LLM. The README is the public claim. This file is the map of the machinery.
 [docs/PHENOMENA.md](PHENOMENA.md) is why the items exist.
 [docs/PROJECT_LOG.md](PROJECT_LOG.md) is where a session stopped.
 
-How-tos for the three jobs you will actually do:
+How-tos for the jobs you will actually do:
 
 - [Run heavier models](how-to/run-heavier-models.md)
+- [Fine-tune XLM-R](how-to/finetune-xlmr.md)
 - [Add a challenge item](how-to/add-a-challenge-item.md)
 - [Add a model](how-to/add-a-model.md)
 
@@ -73,8 +74,10 @@ model, times `predict`, scores, writes a timestamped directory under
 `reports/`, and points `reports/latest` at it.
 
 Closed-set models (`tfidf`, `embed`) train on seed at startup of that
-model. They never fit on the challenge set. If you add a challenge item
-to `seed.jsonl`, you have leaked the test.
+model. They never fit on the challenge set. `xlmrft` is trained by
+`lidlab train-xlmr` on WiLI, with challenge texts filtered out. If you
+add a challenge item to `seed.jsonl` or to the trainer's source, you
+have leaked the test.
 
 ## Directory map
 
@@ -177,7 +180,8 @@ That split is the CommonLID all / cov. idea, applied to this small set.
 
 `tfidf` and `embed` advertise only the seed languages as `supported`.
 `fasttext` uses a fixed 176-language list. `xlmr` uses its 20-class
-head. `glotlid` derives `supported` from the loaded model's labels.
+head. `xlmrft` advertises the WiLI languages it was trained on.
+`glotlid` derives `supported` from the loaded model's labels.
 
 Confidence is recorded and not used for the official scores. Do not
 start thresholding until you can explain a miss without it.
@@ -200,6 +204,7 @@ before they return.
 | `fasttext` | `fasttext` | no | ~126 MB | CPU |
 | `glotlid` | `fasttext` | no | ~1.7 GB | CPU |
 | `xlmr` | `neural` | no (pretrained head) | ~1.1 GB | CPU or GPU |
+| `xlmrft` | `train` to fit; `neural` to load | yes, on WiLI (challenge held out) | ~1.1 GB | GPU to train; CPU to eval |
 | `embed` | `neural` | yes, on seed | ~470 MB encoder | CPU or GPU |
 
 Install extras from `pyproject.toml`:
@@ -207,6 +212,7 @@ Install extras from `pyproject.toml`:
 ```bash
 uv sync --extra fasttext --extra dev    # fasttext + glotlid
 uv sync --extra neural --extra dev      # xlmr + embed
+uv sync --extra train --extra dev       # xlmrft trainer (datasets + accelerate)
 uv sync --extra all --extra dev         # everything
 ```
 
@@ -223,6 +229,7 @@ on uncovered languages.
 uv run lidlab check-data
 uv run lidlab eval --models tfidf
 uv run lidlab eval --models fasttext --limit 5
+uv run lidlab train-xlmr --limit 32 --epochs 1
 uv run pytest
 ```
 
@@ -235,6 +242,7 @@ Environment:
 | --- | --- | --- |
 | `LIDLAB_DATA` | `<repo>/data` | override JSONL location |
 | `LIDLAB_CACHE` | `~/.cache/lidlab` | weight cache |
+| `LIDLAB_XLMRFT` | `$LIDLAB_CACHE/xlmrft` | fine-tuned XLM-R checkpoint |
 
 ## How to read a report
 
@@ -259,6 +267,7 @@ broken. Do not narrate stress-case errors on top of a broken baseline.
 | `test_challenge.py` | JSONL validity, required phenomena, seed/challenge split, matrix on `+` items |
 | `test_metrics.py` | exact / family / codeswitch / coverage, and the codeswitch aggregate |
 | `test_tfidf.py` | English and Japanese controls, and that some challenge items are uncovered |
+| `test_train.py` | challenge texts cannot enter the XLM-R trainer; `zh-yue` stays Cantonese |
 
 After any data edit: `uv run lidlab check-data && uv run pytest`.
 
