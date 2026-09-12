@@ -5,6 +5,33 @@ This file is where a night of work stopped.
 
 ---
 
+## 2026-09-12 — GlotLID on the challenge set
+
+**Goal:** Run `glotlid` alone on the N100 and put the coverage leader on the scoreboard.
+
+**Done:**
+- Committed the session log (`90b8c3e`). Local `main` is one commit ahead of origin; not pushed.
+- Smoke: `uv run lidlab eval --models glotlid --limit 5` (download ~2 min, then 5/5).
+- Full set: `reports/20260912T172307Z/` — 94 items, ~12 s after weights were cached.
+
+**Comparison (94 items):**
+
+| model | exact | codeswitch hit | family | covered exact | n covered |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| tfidf | 0.511 | 0.750 | 0.553 | 0.649 | 74 / 94 |
+| fasttext | 0.755 | 1.000 | 0.809 | 0.772 | 92 / 94 |
+| glotlid | 0.809 | 0.950 | 0.819 | 0.809 | 94 / 94 |
+| xlmr | 0.532 | 1.000 | 0.553 | 0.769 | 65 / 94 |
+
+GlotLID names every item. The interesting miss is not coverage: `very_short` 0.417 vs fastText 0.667 (`no` → Bribri, `ok` → Luo). One codeswitch miss: `cs-jaen-05` `今日のstandup長すぎた。` → `zh`. Romanization 0.091. `low_resource` and `related_language` are 1.000.
+
+**Open / next:**
+1. Fine-tune XLM-R on a larger public LID set; keep this challenge set held out (Colab GPU).
+2. Codeswitch head, or top-2 scoring against `+` labels.
+3. Optional: same adapters on CommonLID.
+
+---
+
 ## 2026-09-12 — Stop for the night
 
 **Goal:** Leave the lab resumable: documented, compared, and on private GitHub.
