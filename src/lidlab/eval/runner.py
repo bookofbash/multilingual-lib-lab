@@ -60,6 +60,7 @@ def run_eval(
             "n": len(examples),
             "exact": {item.model: item.exact for item in metrics},
             "codeswitch_hit": {item.model: item.codeswitch_hit for item in metrics},
+            "codeswitch_pair": {item.model: item.codeswitch_pair for item in metrics},
             "family": {item.model: item.family for item in metrics},
             "covered_exact": {item.model: item.covered_exact for item in metrics},
             "latency_ms_per_example": {item.model: item.latency_ms_per_example for item in metrics},

@@ -7,7 +7,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVC
 
 from lidlab.labels import normalize_language
-from lidlab.models.base import LidModel
+from lidlab.models.base import LidModel, top_labels
 from lidlab.schema import Example, ModelCard, Prediction
 
 
@@ -55,7 +55,13 @@ class TfidfLid(LidModel):
         return cls(pipeline, frozenset(labels))
 
     def predict_one(self, text: str) -> Prediction:
-        label = str(self.pipeline.predict([text])[0])
-        decision = self.pipeline.decision_function([text])
-        confidence = float(decision.max()) if getattr(decision, "max", None) else 0.0
-        return Prediction(language=label, confidence=confidence, raw_label=label)
+        scores = self.pipeline.decision_function([text])
+        classes = self.pipeline.named_steps["clf"].classes_
+        language, alternatives, confidence = top_labels(classes, scores, k=2)
+        extras = {"alternatives": alternatives} if alternatives else {}
+        return Prediction(
+            language=language,
+            confidence=confidence,
+            raw_label=language,
+            extras=extras,
+        )

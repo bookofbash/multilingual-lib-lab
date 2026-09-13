@@ -18,16 +18,17 @@ def write_report(path: Path, examples: list[Example], metrics: list[RunMetrics])
         "",
         "## Overall",
         "",
-        "| model | exact | codeswitch hit | family | covered exact | n covered | ms / item | size |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| model | exact | codeswitch hit | codeswitch pair | family | covered exact | n covered | ms / item | size |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for item in metrics:
         size = _fmt_size(item.size_bytes)
         lines.append(
-            "| {model} | {exact:.3f} | {cs:.3f} | {family:.3f} | {cov:.3f} | {n_cov} | {ms:.1f} | {size} |".format(
+            "| {model} | {exact:.3f} | {cs:.3f} | {pair:.3f} | {family:.3f} | {cov:.3f} | {n_cov} | {ms:.1f} | {size} |".format(
                 model=item.model,
                 exact=item.exact,
                 cs=item.codeswitch_hit,
+                pair=item.codeswitch_pair,
                 family=item.family,
                 cov=item.covered_exact,
                 n_cov=item.n_covered,
@@ -70,6 +71,8 @@ def write_report(path: Path, examples: list[Example], metrics: list[RunMetrics])
             "- **exact**: predicted language is in the acceptable gold set.",
             "- **codeswitch hit**: predicted language is one of the languages in a mixed utterance.",
             "  Off-the-shelf models have no `ja+en` class, so this is the honest partial credit.",
+            "- **codeswitch pair**: both gold languages appear in the top-2 predictions.",
+            "  That is the pair recovery a single-label head can honestly claim.",
             "- **family**: exact, or a related-language confusion (id/ms, no/da/sv, zh/yue, …).",
             "- **covered exact**: exact score on items the model can name at all.",
             "  This is the CommonLID-style coverage split: do not punish a 20-class XLM-R",

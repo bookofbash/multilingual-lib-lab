@@ -47,7 +47,8 @@ print(parse_gold('de|no|da|sv|nl'))"
 
 Exercise after step 5: score `明日のmeetingは3pmで大丈夫？` (gold `ja+en`)
 when the model says `ja`, then when it says `en`, then when it says `fr`.
-You should get exact+codeswitch, exact+codeswitch, and a miss.
+You should get exact+codeswitch (no pair), exact+codeswitch (no pair), and a miss.
+Add `extras={"alternatives": ("en",)}` on the `ja` prediction and pair should turn on.
 
 Exercise after a `tfidf` run: open `reports/latest/failures.md` and explain
 three misses in your own words before changing any code.
@@ -161,8 +162,9 @@ All of this lives in `score_item`.
 
 | flag | true when |
 | --- | --- |
-| `exact` | predicted language ∈ gold `any_of` |
-| `codeswitch_hit` | predicted language ∈ gold `all_of` (same set as `any_of` for `+` items) |
+| `exact` | predicted language ∈ gold `any_of`; a `ja+en` prediction matches a `+` gold by set |
+| `codeswitch_hit` | top-1 language (or a `+` prediction's set) intersects gold `all_of` |
+| `codeswitch_pair` | gold `all_of` ⊆ top-2 named languages |
 | `family` | `exact`, or predicted language shares a family with any acceptable gold |
 | `covered` | the model's `supported` set intersects gold `any_of` |
 
@@ -170,6 +172,7 @@ Aggregates in `score_run`:
 
 - **exact / family** — mean over every item
 - **codeswitch hit** — mean only over items whose gold contains `+`
+- **codeswitch pair** — mean only over `+` items; both languages in top-2
 - **covered exact** — mean exact over items with `covered=True`
 - **n covered** — how many items the model could name at all
 
@@ -285,7 +288,8 @@ After any data edit: `uv run lidlab check-data && uv run pytest`.
 | term | meaning here |
 | --- | --- |
 | matrix language | the grammatical frame of a mixed utterance |
-| codeswitch hit | predicted one of the languages that are actually present |
+| codeswitch hit | top-1 named one of the languages that are actually present |
+| codeswitch pair | both gold languages appear in the top-2 |
 | covered | the model has a name for at least one acceptable gold language |
 | family | documented related-language pair, not a language-family tree of the world |
 | CommonLID | Mozilla's 2026 web-text LID benchmark; this repo does not reproduce it |

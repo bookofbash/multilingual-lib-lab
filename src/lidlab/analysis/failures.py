@@ -11,8 +11,9 @@ PHENOMENON_BLURBS = {
         "If a model misses clean controls, later stress-case errors are not diagnostic."
     ),
     "code_switching": (
-        "Single-label LID cannot represent a mixed utterance. The interesting question "
-        "is whether it recovers the matrix language or snaps to the more distinctive script."
+        "Single-label LID cannot represent a mixed utterance. codeswitch hit is recovering "
+        "one language; codeswitch pair is recovering both in the top-2. The interesting "
+        "question is still whether top-1 is the matrix language or the flashiest script."
     ),
     "very_short": (
         "Function words and interjections starve n-gram and transformer models of context. "

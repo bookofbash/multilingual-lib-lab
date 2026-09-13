@@ -20,6 +20,7 @@ The contract in `src/lidlab/models/base.py`:
 
 - `card` → `ModelCard(name, kind, supported, size_bytes?, notes)`
 - `predict_one(text) → Prediction(language, confidence, raw_label, script?)`
+- Put the second-best language in `extras["alternatives"]` so `codeswitch pair` can fire. `top_labels` in `base.py` is the helper for sklearn-style score vectors.
 - `predict(texts)` already loops; override only if you have a real batch path
 
 `language` must already be normalized. Call

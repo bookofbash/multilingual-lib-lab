@@ -52,6 +52,14 @@ class Prediction:
     script: str | None = None
     extras: dict[str, Any] = field(default_factory=dict)
 
+    def ranked_languages(self) -> tuple[str, ...]:
+        ranked: list[str] = [self.language]
+        for lang in self.extras.get("alternatives") or ():
+            token = str(lang)
+            if token and token not in ranked:
+                ranked.append(token)
+        return tuple(ranked)
+
 
 @dataclass
 class ModelCard:

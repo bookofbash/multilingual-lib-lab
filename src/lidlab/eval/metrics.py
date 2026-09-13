@@ -16,6 +16,7 @@ class ItemScore:
     confidence: float
     exact: bool
     codeswitch_hit: bool
+    codeswitch_pair: bool
     family: bool
     covered: bool
     phenomena: tuple[str, ...]
@@ -28,6 +29,7 @@ class RunMetrics:
     n: int
     exact: float
     codeswitch_hit: float
+    codeswitch_pair: float
     family: float
     covered_exact: float
     n_covered: int
@@ -42,11 +44,29 @@ class RunMetrics:
         return payload
 
 
+def predicted_languages(prediction: Prediction) -> frozenset[str]:
+    """Languages the model named, including a ``+`` pair and top-2 alternatives."""
+    names: list[str] = []
+    if "+" in prediction.language:
+        names.extend(parse_gold(prediction.language).all_of)
+    else:
+        names.append(prediction.language)
+    names.extend(prediction.extras.get("alternatives") or ())
+    return frozenset(str(name) for name in names if name)
+
+
 def score_item(example: Example, prediction: Prediction, supported: frozenset[str]) -> ItemScore:
     gold = parse_gold(example.gold)
     predicted = prediction.language
-    exact = predicted in gold.any_of
-    codeswitch_hit = predicted in gold.all_of
+    named = predicted_languages(prediction)
+    if "+" in predicted:
+        primary = parse_gold(predicted).all_of
+        exact = primary == gold.all_of if gold.codeswitch else predicted in gold.any_of
+    else:
+        primary = frozenset({predicted})
+        exact = predicted in gold.any_of
+    codeswitch_hit = bool(primary & gold.all_of) if gold.codeswitch else predicted in gold.all_of
+    codeswitch_pair = bool(gold.codeswitch and gold.all_of <= named)
     family = exact or any(same_family(predicted, lang) for lang in gold.any_of)
     covered = model_covers(supported, gold)
     return ItemScore(
@@ -57,6 +77,7 @@ def score_item(example: Example, prediction: Prediction, supported: frozenset[st
         confidence=prediction.confidence,
         exact=exact,
         codeswitch_hit=codeswitch_hit,
+        codeswitch_pair=codeswitch_pair,
         family=family,
         covered=covered,
         phenomena=example.phenomena,
@@ -92,6 +113,7 @@ def score_run(
             "n": float(len(group)),
             "exact": _mean([item.exact for item in group]),
             "codeswitch_hit": _mean([item.codeswitch_hit for item in group]),
+            "codeswitch_pair": _mean([item.codeswitch_pair for item in group]),
             "family": _mean([item.family for item in group]),
         }
     confusion_counter: Counter[tuple[str, str]] = Counter()
@@ -104,6 +126,7 @@ def score_run(
         n=len(items),
         exact=_mean([item.exact for item in items]),
         codeswitch_hit=_mean([item.codeswitch_hit for item in codeswitch_items]),
+        codeswitch_pair=_mean([item.codeswitch_pair for item in codeswitch_items]),
         family=_mean([item.family for item in items]),
         covered_exact=_mean([item.exact for item in covered]),
         n_covered=len(covered),

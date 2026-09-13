@@ -50,12 +50,19 @@ class GlotLid(LidModel):
 
     def predict_one(self, text: str) -> Prediction:
         cleaned = text.replace("\n", " ").strip() or " "
-        labels, probs = self.model.predict(cleaned, k=1)
+        labels, probs = self.model.predict(cleaned, k=2)
         raw = labels[0]
         language, script = normalize_prediction(raw)
+        alternatives = []
+        for alt_raw in labels[1:]:
+            alt_lang, _ = normalize_prediction(alt_raw)
+            if alt_lang != language:
+                alternatives.append(alt_lang)
+        extras = {"alternatives": tuple(alternatives)} if alternatives else {}
         return Prediction(
             language=language,
             confidence=float(probs[0]),
             raw_label=raw,
             script=script,
+            extras=extras,
         )

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from lidlab.labels import normalize_prediction
-from lidlab.models.base import LidModel
+from lidlab.models.base import LidModel, pipeline_rows
 from lidlab.paths import cache_dir
 from lidlab.schema import ModelCard, Prediction
 
@@ -66,13 +66,21 @@ class XlmrLid(LidModel):
         return cls(pipe)
 
     def predict_one(self, text: str) -> Prediction:
-        output = self.pipeline(text, top_k=1, truncation=True)
-        item = output[0] if isinstance(output, list) and output and isinstance(output[0], dict) else output[0][0]
+        output = self.pipeline(text, top_k=2, truncation=True)
+        rows = pipeline_rows(output)
+        item = rows[0]
         raw = str(item["label"])
         language, script = normalize_prediction(raw)
+        alternatives = []
+        for row in rows[1:]:
+            alt_lang, _ = normalize_prediction(str(row["label"]))
+            if alt_lang != language:
+                alternatives.append(alt_lang)
+        extras = {"alternatives": tuple(alternatives)} if alternatives else {}
         return Prediction(
             language=language,
             confidence=float(item.get("score") or 0.0),
             raw_label=raw,
             script=script,
+            extras=extras,
         )

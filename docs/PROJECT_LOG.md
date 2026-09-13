@@ -5,6 +5,21 @@ This file is where a night of work stopped.
 
 ---
 
+## 2026-09-12 — Codeswitch pair (top-2)
+
+**Goal:** Score mixed gold as pair recovery without training a `ja+en` class on the challenge set.
+
+**Done:**
+- Adapters return top-2 in `Prediction.extras["alternatives"]`.
+- New aggregate **codeswitch pair**: both gold languages ⊆ top-2, mean only over `+` items. `exact` still treats a single `ja` as a hit on `ja+en` (existing spec).
+- `tfidf` pair=0.050 (1/20 mixed items: `cs-jaen-07`). Hit stays 0.750. CLI/report column added. Tests 26 passed.
+
+**Open / next:**
+1. Re-eval `fasttext`, `glotlid`, `xlmr`, `xlmrft` for the pair column (do not invent those numbers).
+2. Optional: same adapters on CommonLID.
+
+---
+
 ## 2026-09-12 — XLM-R fine-tune scored on the challenge set
 
 **Goal:** Train `xlmrft` on WiLI (challenge held out) and put it next to papluca `xlmr`.
@@ -16,8 +31,8 @@ This file is where a night of work stopped.
 - Hawaiian uncovered (not in WiLI). Held-out drops: 0. README phenomenon table updated.
 
 **Open / next:**
-1. Commit trainer + scoreboard; push.
-2. Codeswitch head, or top-2 against `+` labels.
+1. Done: trainer committed (`fa33a34`) and pushed.
+2. Codeswitch pair column is in the following log entry.
 3. Optional: same adapters on CommonLID.
 
 ---

@@ -47,6 +47,7 @@ def main(argv: list[str] | None = None) -> int:
             print(
                 f"{metrics.model}: exact={metrics.exact:.3f} "
                 f"codeswitch={metrics.codeswitch_hit:.3f} "
+                f"pair={metrics.codeswitch_pair:.3f} "
                 f"family={metrics.family:.3f} "
                 f"covered_exact={metrics.covered_exact:.3f} "
                 f"({metrics.n_covered}/{metrics.n})"

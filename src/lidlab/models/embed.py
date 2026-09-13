@@ -2,11 +2,10 @@ from __future__ import annotations
 
 from collections.abc import Sequence
 
-import numpy as np
 from sklearn.linear_model import LogisticRegression
 
 from lidlab.labels import normalize_language
-from lidlab.models.base import LidModel
+from lidlab.models.base import LidModel, top_labels
 from lidlab.paths import cache_dir
 from lidlab.schema import Example, ModelCard, Prediction
 
@@ -49,9 +48,15 @@ class EmbedLid(LidModel):
 
     def predict_one(self, text: str) -> Prediction:
         vector = self.encoder.encode([text], convert_to_numpy=True, show_progress_bar=False)
-        label = str(self.classifier.predict(vector)[0])
         if hasattr(self.classifier, "predict_proba"):
-            confidence = float(np.max(self.classifier.predict_proba(vector)))
+            scores = self.classifier.predict_proba(vector)
         else:
-            confidence = 0.0
-        return Prediction(language=label, confidence=confidence, raw_label=label)
+            scores = self.classifier.decision_function(vector)
+        language, alternatives, confidence = top_labels(self.classifier.classes_, scores, k=2)
+        extras = {"alternatives": alternatives} if alternatives else {}
+        return Prediction(
+            language=language,
+            confidence=confidence,
+            raw_label=language,
+            extras=extras,
+        )

@@ -22,6 +22,7 @@ LID has no `ja+en` class, so exact match on a mixed gold label is the wrong
 question. The honest scores are:
 
 - did it recover **one** of the languages (`codeswitch hit`)
+- did both languages appear in the **top-2** (`codeswitch pair`)
 - did it recover the **matrix** language (in the notes)
 - did script hijack the decision (kanji / hanzi pulling an English frame to `ja` / `zh`)
 
