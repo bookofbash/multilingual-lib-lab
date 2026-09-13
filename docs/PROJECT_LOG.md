@@ -5,6 +5,23 @@ This file is where a night of work stopped.
 
 ---
 
+## 2026-09-13 — Codeswitch pair re-eval
+
+**Goal:** Fill pair cells from real top-2 predictions. Old reports only stored top-1.
+
+**Done:**
+- `fasttext` pair=0.100 (`cs-jaen-06`, `cs-jaen-08`). Hit still 1.000.
+- `xlmr` pair=0.100 (`cs-jaen-08`, `cs-zhen-02`). Hit still 1.000.
+- `glotlid` pair=0.050 (`cs-zhen-02`). Hit still 0.950.
+- Exact / family / covered unchanged vs the previous scoreboard.
+- `xlmrft` skipped: no checkpoint at `~/.cache/lidlab/xlmrft` (trained on Colab).
+
+**Open / next:**
+1. Optional: copy the Colab `xlmrft` checkpoint here and fill its pair cell.
+2. Optional: same adapters on CommonLID.
+
+---
+
 ## 2026-09-12 — Codeswitch pair (top-2)
 
 **Goal:** Score mixed gold as pair recovery without training a `ja+en` class on the challenge set.
@@ -15,7 +32,7 @@ This file is where a night of work stopped.
 - `tfidf` pair=0.050 (1/20 mixed items: `cs-jaen-07`). Hit stays 0.750. CLI/report column added. Tests 26 passed.
 
 **Open / next:**
-1. Re-eval `fasttext`, `glotlid`, `xlmr`, `xlmrft` for the pair column (do not invent those numbers).
+1. Done: pair re-eval is in the following log entry (`xlmrft` still needs a local checkpoint).
 2. Optional: same adapters on CommonLID.
 
 ---

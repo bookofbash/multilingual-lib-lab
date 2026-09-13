@@ -102,9 +102,9 @@ WiLI-2018 with this challenge set held out.
 | model | exact | codeswitch hit | codeswitch pair | family | covered exact | n covered |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | tfidf | 0.511 | 0.750 | 0.050 | 0.553 | 0.649 | 74 / 94 |
-| fasttext | 0.755 | 1.000 | — | 0.809 | 0.772 | 92 / 94 |
-| glotlid | 0.809 | 0.950 | — | 0.819 | 0.809 | 94 / 94 |
-| xlmr | 0.532 | 1.000 | — | 0.553 | 0.769 | 65 / 94 |
+| fasttext | 0.755 | 1.000 | 0.100 | 0.809 | 0.772 | 92 / 94 |
+| glotlid | 0.809 | 0.950 | 0.050 | 0.819 | 0.809 | 94 / 94 |
+| xlmr | 0.532 | 1.000 | 0.100 | 0.553 | 0.769 | 65 / 94 |
 | xlmrft | 0.777 | 1.000 | — | 0.777 | 0.793 | 92 / 94 |
 
 | phenomenon | n | tfidf | fasttext | glotlid | xlmr | xlmrft |
@@ -130,11 +130,12 @@ not contain.
 a native-script Wikipedia prior is a liability on `arigatou gozaimasu`.
 Hard leftovers dump to Yoruba (`zh`/`ja`/`haw`/`ja` → `yo`), the same
 kind of forced label as GlotLID's `no` → Bribri. Codeswitch hit is 1.0
-once the model is not a tiny n-gram SVM. **Codeswitch pair** is the
-honest next question: both gold languages in the top-2, without a
-trained `ja+en` class. `tfidf` is 0.050 (1 / 20 mixed items). The other
-adapters now return top-2; fill their pair cells with a re-eval.
-GlotLID's one miss is `今日のstandup長すぎた。` snapping to Chinese.
+once the model is not a tiny n-gram SVM. **Codeswitch pair** is not:
+`tfidf` and GlotLID are 0.050 (1 / 20 mixed items); fastText and papluca
+XLM-R are 0.100 (2 / 20). Naming one language in the mix is easy.
+Keeping the other in the top-2 is not. `xlmrft` still needs a local
+checkpoint to fill. GlotLID's one hit miss is
+`今日のstandup長すぎた。` snapping to Chinese.
 
 ## Layout
 
@@ -160,4 +161,5 @@ Seed and challenge never mix. Closed-set models train on seed only.
 
 ## Next
 
-1. Optional: score the same adapters on CommonLID so the stress set and the web benchmark sit side by side.
+1. Optional: copy the Colab `xlmrft` checkpoint onto this machine and fill its codeswitch-pair cell.
+2. Optional: score the same adapters on CommonLID so the stress set and the web benchmark sit side by side.
