@@ -5,6 +5,21 @@ This file is where a night of work stopped.
 
 ---
 
+## 2026-09-15 — Public GitHub for the Apple LID application
+
+**Goal:** Stop waiting for a perfect lab. Publish the current scoreboard and point the Apple LID application at it.
+
+**Done:**
+- Left the 94-item comparison as-is. Optional CommonLID scoring and the local `xlmrft` pair cell are not blockers.
+- README closing: dropped the homework-shaped "Next" list. The scoreboard is the claim; Colab checkpoint copy and CommonLID are named as not required to read the result.
+- Push `main` and set the GitHub repo public so the resume can link it.
+
+**Open / next:**
+1. Optional: copy the Colab `xlmrft` checkpoint here and fill its pair cell.
+2. Optional: same adapters on CommonLID.
+
+---
+
 ## 2026-09-13 — Codeswitch pair re-eval
 
 **Goal:** Fill pair cells from real top-2 predictions. Old reports only stored top-1.

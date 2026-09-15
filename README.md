@@ -157,9 +157,6 @@ Seed and challenge never mix. Closed-set models train on seed only.
 
 - Not a CommonLID reproduction. Use [mozilla language-id](https://github.com/Mozilla-Data-Collective/language-id) for web-scale numbers.
 - Not a claim of native-speaker annotation for every low-resource item. Those rows are coverage probes with documented caveats.
-- Not a reason to skip a real multilingual modeling role's PyTorch work. It is evidence that the evaluation and linguistics side of that work is already concrete.
+- Not a from-scratch LID trainer. The PyTorch work here is a held-out XLM-R fine-tune plus a comparison against off-the-shelf systems, not a new architecture.
 
-## Next
-
-1. Optional: copy the Colab `xlmrft` checkpoint onto this machine and fill its codeswitch-pair cell.
-2. Optional: score the same adapters on CommonLID so the stress set and the web benchmark sit side by side.
+The public scoreboard is the committed README table. Optional follow-ups that are *not* required to read the result: copy the Colab `xlmrft` checkpoint here to fill its codeswitch-pair cell, and score the same adapters on CommonLID next to this stress set.
